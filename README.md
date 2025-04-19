@@ -1,66 +1,71 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## Panduan Fitur Aplikasi
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Aplikasi ini adalah sistem perpustakaan berbasis web yang menyediakan berbagai fitur untuk pengguna umum dan admin. Berikut adalah daftar fitur yang tersedia:
 
-## About Laravel
+### Fitur untuk Pengguna Umum
+1. **Beranda (Home)**  
+   - Menampilkan informasi umum tentang perpustakaan.
+   - Akses melalui URL: `/`.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+2. **Bookstore**  
+   - Menampilkan daftar buku yang tersedia di perpustakaan.  
+   - Akses melalui URL: `/bookstore`.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+3. **Detail Buku**  
+   - Melihat detail informasi buku tertentu.  
+   - Akses melalui URL: `/book/{id}`.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+4. **Peminjaman Buku**  
+   - Melihat daftar buku yang sedang dipinjam.  
+   - Akses melalui URL: `/borrowed` (autentikasi diperlukan).  
+   - Meminjam buku baru melalui form peminjaman.
 
-## Learning Laravel
+5. **Pengembalian Buku**  
+   - Mengembalikan buku yang telah dipinjam.  
+   - Akses melalui URL: `/borrowed/{id}/return`.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+6. **Profil Pengguna**  
+   - Mengedit informasi profil pengguna.  
+   - Akses melalui URL: `/profile`.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Fitur untuk Admin
+1. **Dashboard Admin**  
+   - Menampilkan statistik dan laporan perpustakaan.  
+   - Akses melalui URL: `/dashboard` (autentikasi dan peran admin diperlukan).
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+2. **Manajemen Buku**  
+   - Menambahkan buku baru ke perpustakaan.  
+   - Mengedit, memperbarui, atau menghapus buku yang ada.  
+   - Akses melalui URL: `/dashboard/books-list` dan `/dashboard/books/addbooks`.
 
-## Laravel Sponsors
+3. **Manajemen Peminjaman**  
+   - Melihat daftar permintaan peminjaman buku.  
+   - Menyetujui atau menolak permintaan peminjaman.  
+   - Akses melalui URL: `/dashboard/admin/borrowed` dan `/borrow-requests`.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+4. **Laporan Peminjaman**  
+   - Menampilkan laporan peminjaman buku.  
+   - Mengekspor laporan ke dalam format PDF.  
+   - Akses melalui URL: `/reports` dan `/reports/export-pdf`.
 
-### Premium Partners
+### Fitur Tambahan
+1. **Pencarian Buku**  
+   - Fitur pencarian cepat untuk menemukan buku berdasarkan kata kunci.  
+   - Dapat diakses melalui input pencarian di bagian header.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+2. **Pengujian Data**  
+   - Route khusus untuk pengujian data status peminjaman.  
+   - Akses melalui URL: `/test-dikembalikan`.
 
-## Contributing
+### Teknologi yang Digunakan
+- **Frontend**: Tailwind CSS, Alpine.js
+- **Backend**: Laravel Framework
+- **Database**: MySQL
+- **Build Tools**: Vite
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Cara Menjalankan Aplikasi
+1. Clone repository ini ke komputer lokal Anda.
+2. Jalankan perintah berikut untuk menginstal dependensi:
+   ```sh
+   composer install
+   npm install
